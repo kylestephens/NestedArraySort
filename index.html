@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Flatten an Arbitrarily Nested Array</title>
+	<link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/ArrayUtils.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Nested Arrays</h1>
+    </header>
+
+    <!-- Display Inputs & Outputs -->
+    <div class="results">
+
+        <p><strong>Problem statement:</strong>
+        Write some code, that will flatten an array of arbitrarily nested arrays of integers into a flat array of integers. e.g. [[1,2,[3]],4] -> [1,2,3,4]</p>
+
+        <h2>Input</h2>
+    	<div class="results__form-field results__form-field--input"></div>
+
+        <h2>Output</h2>
+        <div class="results__form-field results__form-field--output"></div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            // NESTED ARRAY TO FLATTEN
+            var UNSORTED_ARRAY = [[1, 2, [6, [3, 4]], 5]];
+
+            // OUTPUT 'BEFORE' TO SCREEN
+            $('.results__form-field--input').text(
+                JSON.stringify(UNSORTED_ARRAY) // output to include square brackets
+            );
+
+            // PERFORM SORT
+            ArrayUtils = new ArrayUtils();
+            var flattenedArray = ArrayUtils.getFlattenedArray(UNSORTED_ARRAY);
+
+            // OUTPUT 'AFTER' TO SCREEN
+            $('.results__form-field--output').text(
+                JSON.stringify(flattenedArray)
+            );
+
+        });
+    </script>
+
+</body>
+</html>
